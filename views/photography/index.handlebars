@@ -1,0 +1,60 @@
+<main>
+
+    {{> header}}
+
+    <section class="gallery-container">
+
+        <button class="content-switch">Go back</button>
+        <div class="carousel">
+            <img src="http://farm3.static.flickr.com/2925/14069945181_4c655b084a_z.jpg">
+            <script id="galleryTemplate" type="text/html">
+
+                <ul>                
+                    <% _.each(flickr, function(el){ %>
+
+                        <li>
+                            <img src=<%= el.image %> />
+                        </li>
+
+                    <% }); %>
+                </ul>
+
+            </script>
+        </div>
+
+        <div class="carousel-nav">
+            <a href="#" class="prev" data-dir='prev'>&larr;</a>
+            <a href="#" class="next" data-dir='next'>&rarr;</a>
+        </div>  
+
+    </section>
+
+    <nav>
+        <ul class="mainnav">        
+            <li class="food">
+                <a href="#food">food</a>
+                <button class="content-switch">Read more</button>
+            </li>
+            <li class="portrait">
+                <a href="#portrait">portrait</a>
+                <button class="content-switch">Read more</button>
+            </li>
+            <li class="personal">
+                <a href="">personal</a>
+                <button class="content-switch">Read more</button>
+            </li>
+        </ul>
+
+        <ul class="subnav">
+            <li class="walk">
+                <a href="#walk">walk</a>
+            </li>
+            <li class="wall">
+                <a href="#wall-to-wall">wall-to-wall</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="clear"></div>
+        
+</main>

@@ -1,0 +1,128 @@
+ul li img {
+    width: 100%;
+}
+
+@media (min-width: 1040px) {
+
+	.gallery-container {
+        float: left;
+        width: 640px;
+        height: 100%;
+        margin-left: 16%;
+	}
+
+	.carousel {
+	    overflow: hidden;
+
+        ul {
+            width: 55999px; /** just another very big number **/
+            position: relative;
+        }
+
+        li {
+            float: left;
+        }
+	}
+
+    .carousel-nav {
+        display: none;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .prev {
+        display: none;
+    }
+
+    .overlay {
+        position: absolute;
+        width: 640px;
+        height: 427px;
+        background: white;
+        opacity: 0.4;
+    }
+
+    .content-switch {
+        display: none;
+    }
+
+}
+
+@media (max-width: 1040px) {
+
+    body {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    main {
+        position: relative;
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    header {
+        display: none;
+    }
+
+    nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 400%;
+        height: 100%;
+        font-size: 0;
+        transition: -webkit-transform 300ms cubic-bezier(.17,.67,.69,1.33);
+    }
+
+    nav ul {
+        height: inherit;
+    }
+
+    nav ul li {
+        display: inline-block;
+        position: relative;
+        margin: 0;
+        height: 100%;
+        width: 25%;
+        font-size: 16px;
+    }
+
+    nav ul li:nth-child(1) {
+        background-image: url('/dist/images/food.jpg');
+        background-repeat: no-repeat;
+        background-size: cover; 
+    }
+
+    nav ul li:nth-child(2) {
+        background-image: url('/dist/images/portrait.jpg');
+        background-repeat: no-repeat;
+        background-size: cover; 
+    }
+
+    nav ul li:nth-child(3) {
+        background-image: url('/dist/images/3.jpg');
+        background-repeat: no-repeat;
+        background-size: cover; 
+    }
+
+    nav ul li:nth-child(4) {
+        background-image: url('/dist/images/4.jpg');
+        background-repeat: no-repeat;
+        background-size: cover; 
+    }
+
+    .mainnav {
+        height: 100%;
+    }
+
+	.gallery-container {
+        width: 100%;
+		margin: 10px auto 0 auto;
+	}
+}

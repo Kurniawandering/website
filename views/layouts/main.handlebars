@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Kubrick Cinematic Movement</title>
+
+    {{#unless dePersgroep}}
+   		<script data-main="src/scripts/main" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.14/require.min.js"></script>
+    {{/unless}}
+        
+    {{#unless dePersgroep}}
+        <link rel="stylesheet" type="text/css" href="dist/css/main.min.css">
+    {{/unless}}
+
+    {{#if dePersgroep}}
+        <link rel="stylesheet" type="text/css" href="dist/css/depersgroep.min.css">
+        <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+    {{/if}}
+
+    {{#if noRequire}}
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/default.min.css">
+    {{/if}}
+
+</head>
+
+<body>
+
+	{{{body}}}
+
+
+	{{#if noRequire}}
+     	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script>
+     	<script src="dist/js/article.min.js"></script>
+	{{/if}}
+
+    {{#if dePersgroep}}
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="dist/js/depersgroep.min.js"></script>
+    {{/if}}
+
+</body>
+
+</html>

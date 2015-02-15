@@ -1,0 +1,47 @@
+	<div id="container" class="container intro-effect-jam3">
+	<!-- Top Navigation -->
+
+	<header class="header">
+		<div class="bg-img"><img src="dist/images/programming.jpg" alt="Background Image" /></div>
+		<div class="title">
+			<h1>Programming</h1>
+			<p class="tagline">Building jQuery plugin for scroll-based interaction</p>
+		</div>
+	</header>
+
+	<article class="content">
+		<div>
+			<p>
+				Let's start building features for <a href="/#interactive">this plugin</a>. First, I'll say that it is important to be able to write your animation logic on your html template. Like this:
+			</p>
+			<p>
+				<pre><code class="html">
+	&lt;div class="animated-elem" 
+		data-kubrick-scene=0
+		data-kubrick-translate-y='-120%'
+		data-kubrick-opacity=0 &gt;
+		&lt;p&gt; The animation happens here&lt;/p&gt;
+	&lt; /div&gt;
+				</code></pre>
+			</p>
+			<p>
+				Second, we need an easy callback implementation in order to move the same element during two different stages. For example, when animating an element, then pause, then animate again. The way the plugin is build, these animation-stages are parted into three different stages. So we need an elegant solution to make a callback during the second and the third stage for the element we start to animate on the first stage.
+			</p>
+
+			<p>
+				Third, the feature has to be build according to modular pattern. Simply put, it's because we are good developers. And because there are a lot of (creative) features to be expected, of which we have to implement/add on to this plugin. 
+			</p>
+
+			<p>
+				And as a final point, besides the amount of joy and gratification I'm getting from writing this jQuery plugin, I think it is also necessary to share some of my code with the world. Now I'm nowhere near from being an expert in JavaScript, so the other reason for doing this is also to educate myself to write a decent JS-library ( well a jQuery plugin in this case )
+			</p>
+
+			<p>
+				Therefore, <a class="link-underline" href="https://github.com/Kurniawandering/kubrick-jquery">this piece of plugin</a> can be considered pre - alpha :). I have to refactor the whole codebase, make it modular according to AMD convention, npm-ed it with a suited customized jQuery, and write a decent documentation. So, get to work! 
+			</p>
+
+		</div>
+	</article>
+
+</div><!-- /container -->
+
