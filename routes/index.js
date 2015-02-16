@@ -97,9 +97,11 @@ router.get('/api/flickr/:category', function(req, resp){
 
         });
 
-	}).on('error', function(e){
+        res.on('error', function(e){
 
-		console.error(e);
+        	console.error(e);
+        });
+
 	});
 });
 

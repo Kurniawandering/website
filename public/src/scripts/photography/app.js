@@ -5,7 +5,6 @@ var $ 			= require('jquery'),
 	_ 			= require('lodash');
 
 var Router             	= require('./router'),
-    Carousel           	= require('./carousel'),
     kubrickTouch       	= require('./touch'),
     animations		    = require('./animation');
 
@@ -18,9 +17,7 @@ $(document).ready(function(){
 
 	Backbone.history.start();
 
-    Carousel.init();
-
-    //kubrickTouch.attachTouch();
+    kubrickTouch.attachTouch();
 
     animations.init();
 

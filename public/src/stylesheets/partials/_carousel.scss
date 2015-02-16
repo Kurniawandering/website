@@ -17,6 +17,7 @@ ul li img {
         ul {
             width: 55999px; /** just another very big number **/
             position: relative;
+            overflow: hidden;
         }
 
         li {
@@ -25,19 +26,19 @@ ul li img {
 	}
 
     .carousel-nav {
-        display: none;
         text-align: center;
-        margin-top: 20px;
+        margin-top: 30px;
     }
 
     .prev {
-        display: none;
+        visibility: hidden;
     }
 
     .overlay {
-        position: absolute;
+        position: relative;
+        bottom: 487px;
         width: 640px;
-        height: 427px;
+        height: 487px;
         background: white;
         opacity: 0.4;
     }

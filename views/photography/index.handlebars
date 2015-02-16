@@ -6,7 +6,7 @@
 
         <button class="content-switch">Go back</button>
         <div class="carousel">
-            <img src="http://farm3.static.flickr.com/2925/14069945181_4c655b084a_z.jpg">
+            
             <script id="galleryTemplate" type="text/html">
 
                 <ul>                
@@ -19,38 +19,38 @@
                     <% }); %>
                 </ul>
 
-            </script>
-        </div>
+                <div class="carousel-nav">
+                    <a href="#" class="prev noselect" data-dir='prev'>&larr;</a>
+                    <a href="#" class="next noselect" data-dir='next'>&rarr;</a>
+                </div>  
 
-        <div class="carousel-nav">
-            <a href="#" class="prev" data-dir='prev'>&larr;</a>
-            <a href="#" class="next" data-dir='next'>&rarr;</a>
-        </div>  
+            </script>  
+        </div>
 
     </section>
 
     <nav>
         <ul class="mainnav">        
             <li class="food">
-                <a href="#food">food</a>
+                <a class="noselect" href="#food">food</a>
                 <button class="content-switch">Read more</button>
             </li>
             <li class="portrait">
-                <a href="#portrait">portrait</a>
+                <a class="noselect" href="#portrait">portrait</a>
                 <button class="content-switch">Read more</button>
             </li>
             <li class="personal">
-                <a href="">personal</a>
+                <a class="noselect" href="">personal</a>
                 <button class="content-switch">Read more</button>
             </li>
         </ul>
 
         <ul class="subnav">
             <li class="walk">
-                <a href="#walk">walk</a>
+                <a class="noselect" href="#walk">walk</a>
             </li>
             <li class="wall">
-                <a href="#wall-to-wall">wall-to-wall</a>
+                <a class="noselect" href="#wall-to-wall">wall-to-wall</a>
             </li>
         </ul>
     </nav>
