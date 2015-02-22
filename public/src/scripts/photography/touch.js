@@ -37,7 +37,10 @@ var dragElement = function(event){
 
 	var currentX = event.deltaX + targetX;
 
-	cachedEl('nav').css('transform', 'translateX(' + currentX + 'px)');
+	if (currentX < 0 && currentX > -mainWidth*2) {
+
+		cachedEl('nav').css('transform', 'translateX(' + currentX + 'px)');
+	}
 };
 
 
@@ -86,7 +89,7 @@ var initTouchListeners = function(element){
 
 kubrickTouch.attachTouch = function(){
 
-	cachedEl('nav ul li').each(function(){
+	cachedEl('.mainnav li').each(function(){
 		initTouchListeners($(this)[0]);
 	});
 };

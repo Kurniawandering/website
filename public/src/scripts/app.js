@@ -1,8 +1,10 @@
+'use strict';
+
 define([
 
-    'jquery',     // lib/jquery/jquery
-    'underscore', // lib/underscore/underscore
-    'backbone',    // lib/backbone/backbone
+    'jquery',     
+    'underscore', 
+    'backbone',   
     'router',
     'kubrick'
 ], function($, _, Backbone, Router, Kubrick){

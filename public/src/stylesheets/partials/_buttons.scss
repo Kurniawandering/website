@@ -9,7 +9,6 @@ button.content-switch {
 	font-family: 'Lato', sans-serif;
 	position: absolute;
 	cursor: pointer;
-	top: 100%;
 	left: 50%;
 	-webkit-transform: translate3d(-50%,-200%,0);
 	transform: translate3d(-50%,-200%,0);
@@ -45,4 +44,12 @@ button.content-switch::before {
 	line-height: 0.75;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+button.content-switch.more {
+	top: 100%;
+}
+
+button.content-switch.back {
+	top: 20%;
 }

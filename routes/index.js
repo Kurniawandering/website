@@ -26,13 +26,13 @@ router.get('/programming', function(req, res) {
 
 });
 
-router.get('/depersgroep', function(req, res) {
+// router.get('/depersgroep', function(req, res) {
 
-	res.render('depersgroep', {
-		dePersgroep: true
-	});
+// 	res.render('depersgroep', {
+// 		dePersgroep: true
+// 	});
 
-});
+// });
 
 router.get('/photography', function(req, resp){
 

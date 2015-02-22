@@ -1,3 +1,5 @@
+'use strict';
+
 requirejs.config({
 
     waitSeconds: 20,
@@ -23,6 +25,7 @@ require([
     
     'domReady',
     'app'
+    
 ], function(domReady, App){
 
     domReady(App.init);

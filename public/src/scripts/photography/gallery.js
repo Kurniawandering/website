@@ -119,7 +119,7 @@ module.exports = Backbone.View.extend({
 
        		self.$container.empty().append(self.$el);
 
-       	}, 20);
+       	}, 200);
 
 		return this;
 

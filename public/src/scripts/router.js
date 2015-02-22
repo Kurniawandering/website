@@ -1,3 +1,5 @@
+'use strict';
+
 define([
     
     'jquery',
@@ -5,6 +7,7 @@ define([
     'backbone',
     'src/scripts/views/home.js',
     'src/scripts/views/interactive.js'
+
 ], function($, _, Backbone, HomeView, InteractiveView ){
     
     var AppRouter = Backbone.Router.extend({
@@ -21,35 +24,35 @@ define([
 
     var init = function(){
 
-      var app_router = new AppRouter();
+        var app_router = new AppRouter();
 
-      app_router.on('route:home', function(){
+        app_router.on('route:home', function(){
 
-        var homeView = new HomeView();
-        homeView.render();
-      });
+            var homeView = new HomeView();
+            homeView.render();
+        });
 
-      app_router.on('route:showInteractive', function(){
+        app_router.on('route:showInteractive', function(){
 
-          // Call render on the module we loaded in via the dependency array
-          // 'views/projects/list'
-          var interactiveView = new InteractiveView();
-          interactiveView.render();
-      });
+            // Call render on the module we loaded in via the dependency array
+            var interactiveView = new InteractiveView();
+            interactiveView.render();
+        });
 
+        app_router.on('route:defaultAction', function(actions){
+        
+            // We have no matching route, lets just log what the URL was
 
-      app_router.on('route:defaultAction', function(actions){
-        // We have no matching route, lets just log what the URL was
+            console.log('No route:', actions);
+            var homeView = new HomeView();
+            homeView.render();
+        });
 
-        console.log('No route:', actions);
-        var homeView = new HomeView();
-        homeView.render();
-      });
-
-      Backbone.history.start();
+        Backbone.history.start();
     };
 
-  return {
-    init: init
-  };
+    return {
+        
+        init: init
+    };
 });
