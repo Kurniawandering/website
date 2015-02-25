@@ -28,10 +28,9 @@ animations.init = function(){
 			// first transition
 			$nav.css('transform', 'translateY(-100%)');
 
-			$main.css({
-				'overflow-y': 'scroll',
-				' -webkit-overflow-scrolling': 'touch'
-			});
+			$main.css('overflow-y', 'scroll');
+
+			$main.css('-webkit-overflow-scrolling', 'touch');
 
 			// second stage of ui
 			$('.content-switch.back').show();
