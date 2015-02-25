@@ -24,7 +24,6 @@ app.engine('handlebars', hbs({
   })
 );
 
-
 app.use(favicon());
 app.use(logger('dev'));
 app.use(bodyParser.json());
