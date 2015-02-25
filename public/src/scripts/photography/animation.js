@@ -30,8 +30,6 @@ animations.init = function(){
 
 			$main.css('overflow-y', 'scroll');
 
-			$main.css('-webkit-overflow-scrolling', 'touch');
-
 			// second stage of ui
 			$('.content-switch.back').show();
 
