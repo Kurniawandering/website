@@ -84,7 +84,7 @@ button.content-switch.back {
         width: 400%;
         height: 100%;
         font-size: 0;
-       // transition: -webkit-transform 300ms cubic-bezier(.17,.67,.69,1.33);
+        transition: -webkit-transform 300ms cubic-bezier(.17,.67,.69,1.33);
     }
 
     nav ul {
