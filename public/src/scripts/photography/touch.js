@@ -76,7 +76,9 @@ var resetElement = function(event){
 
 var initTouchListeners = function(element){
 
-	var touchControl = new Hammer(element);
+	var touchControl = new Hammer(element,{
+		touchAction: 'pan-x'
+	});
 
 	touchControl.on('pan', dragElement)
 				.on('swipe', swipeElement)
