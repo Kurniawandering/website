@@ -44,7 +44,7 @@ button.content-switch.back {
         bottom: 487px;
         width: 640px;
         height: 487px;
-        background: white;
+        background: white;        
         opacity: 0.4;
     }
 
@@ -143,6 +143,9 @@ button.content-switch.back {
         width: 100%;
         height: 100%;
         background: #130f30;
+        background-image: url('/dist/images/loader.gif');
+        background-repeat: no-repeat;
+        background-position: center; 
     }
 
     .noselect {

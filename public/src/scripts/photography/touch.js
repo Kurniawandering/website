@@ -52,9 +52,7 @@ var swipeElement = function(event){
 
 var resetElement = function(event){
 
-
-	// deze voorwaarde is ruk
-	if (Math.abs( event.deltaX )> 500) {
+	if (Math.abs( event.deltaX )> mainWidth / 2) {
 
 		if (event.deltaX < 0) {
 

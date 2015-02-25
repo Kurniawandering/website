@@ -2,17 +2,21 @@
 
 var $ = require('jquery');
 
+var isMobile = require('./library/isMobile');
+
 var animations = {};
 
 
 var contentSwitchMore 	= $('.content-switch.more'),
-	contentSwitchBack = $('.content-switch.back'),
-	$nav 			= $('nav'),
-	$main 			= $('main'),
-	$subNav 		= $('.subnav'),
-	$mainNav 		= $('.mainnav').find('li');
+	contentSwitchBack 	= $('.content-switch.back'),
+	$nav 				= $('nav'),
+	$main 				= $('main'),
+	$subNav 			= $('.subnav'),
+	$mainNav 			= $('.mainnav').find('li');
 
 var subnavState = 'in';
+
+
 
 animations.init = function(){
 
@@ -30,9 +34,6 @@ animations.init = function(){
 			$('.content-switch.back').show();
 
 			$('.content-switch.back').css('position', 'fixed');
-
-			//$nav.css('position', 'fixed');
-
 
 		}, 100);
 
@@ -61,12 +62,18 @@ animations.init = function(){
 
 			break;
 
+			case '#walk':
+
+				currentSlide = 2;
+
+			break;
+
 			default:
 
 				currentSlide = 0;
 		}
 
-		var transformX = -1024 * currentSlide;		
+		var transformX = parseFloat(-mainWidth) * currentSlide;		
 
 	 	$('.content-switch.back').hide();
 
@@ -98,14 +105,17 @@ animations.init = function(){
 
 			if ($(this).hasClass('personal')) {
 
-				event.preventDefault();
+				if(!isMobile.any()){
 
-				subnavState = 'out';
+					event.preventDefault();
 
-				$subNav.show(100, function(){
+					subnavState = 'out';
 
-					$(this).css('transform', 'translateX(-110px)');
-				});
+					$subNav.show(100, function(){
+
+						$(this).css('transform', 'translateX(-110px)');
+					});				
+				}
 			
 			} else {
 

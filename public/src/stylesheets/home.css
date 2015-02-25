@@ -1,0 +1,443 @@
+	/*
+
+		http://meyerweb.com/eric/tools/css/reset/
+	   	v2.0 | 20110126
+	   	License: none (public domain)
+
+
+	*/
+
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed,
+	figure, figcaption, footer, header, hgroup,
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+	/* HTML5 display-role reset for older browsers */
+	article, aside, details, figcaption, figure,
+	footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+	body {
+		line-height: 1;
+	}
+	ol, ul {
+		list-style: none;
+	}
+	blockquote, q {
+		quotes: none;
+	}
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+		content: '';
+		content: none;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+
+
+
+	/* #Basic Styles
+	================================================== */
+
+	body {
+		font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+	}
+
+	article {
+		width: 60%;
+		margin: 0 auto;
+		line-height: 1.5em;		
+	}
+
+	#container {
+		width: 75%;
+		margin: 0 auto;
+	}
+
+	a, a:visited, a:active {
+	 	color: inherit;
+	 	text-decoration: none;
+	}
+
+	ul li {
+		margin-bottom: 15px;
+	}
+
+	.clearfix {
+		clear:both;
+	}
+
+
+	
+	/* #Typography
+	================================================== */
+	h1, h2, h3, h4, h5, h6 {
+		font-weight: bold;
+	}
+
+	em { font-style: italic; }
+	strong { font-weight: bold; }
+
+	hr { border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 10px 0 30px; height: 0; }
+
+
+	@font-face {
+		font-family: bebasLight;
+		src: url('../fonts/bebas/BebasNeue_Light.otf');
+	}
+
+	@font-face {
+		font-family: bebasThin;
+		src: url('../fonts/bebas/BebasNeue_Thin.otf');
+	}
+
+	@font-face {
+		font-family: bebasBook;
+		src: url('../fonts/bebas/BebasNeue_Book.otf');
+	}
+
+	@font-face {
+		font-family: bebasBold;
+		src: url('../fonts/bebas/BebasNeue_Bold.otf');
+		font-weight: bold;
+	}
+
+	@font-face {
+		font-family: neuzeBook;
+		src: url('../fonts/neuze/NeuzeitSLTStd-Book.otf');
+	}
+
+	@font-face {
+		font-family: neuzeHeavy;
+		src: url('../fonts/neuze/NeuzeitSLTStd-BookHeavy.otf');
+	}
+
+/*
+	
+	Home -- header
+
+*/
+
+blockquote {
+	
+	display: none;	
+	font-family: Georgia, serif;
+	font-size: 16px;
+	font-style: italic;
+	margin: 0.25em 0;
+	padding: 0.25em 40px;
+	line-height: 1.45;
+	position: relative;
+	color: #383838;
+}
+
+blockquote:before {
+	display: block;
+	content: "\201C";
+	font-size: 80px;
+	position: absolute;
+	left: -20px;
+	top: -20px;
+	color: #7a7a7a;
+}
+
+blockquote cite {
+	color: #999999;
+	font-size: 14px;
+	display: block;
+	margin-top: 5px;
+}
+ 
+blockquote cite:before {
+	content: "\2014 \2009";
+}
+
+.intro-header {
+	margin-top: 12%;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	border-bottom: solid 1px grey;
+	padding-bottom: 2%;
+}
+
+
+/* 
+
+Home -- body
+
+*/
+
+.intro-effect-sliced {
+	margin: 17% auto 0 auto;
+}
+
+.text-partial {
+	position: relative;
+	width: 27%;
+	/*min-width: 320px;*/
+}
+
+.text-wrapper {
+	margin: 0 auto;
+}
+
+.name {
+	position: relative;
+	width: 25%;
+	visibility:hidden;
+	font-size: 14px;
+	font-family: neuzeHeavy;
+	color: #555;
+	letter-spacing: 2px;
+	float: left;
+	text-align: left;
+}
+
+.name:after {
+	content: '';
+	position: absolute;
+	top: 21px;
+	height: 1px;
+	width: 161px;
+	background: #555;
+	opacity: 0.5;
+}
+
+#intro {
+	display: none;
+	position: relative;
+	width: 37%;
+	font-size: 25px;
+	text-align: left;
+	letter-spacing: 10px;
+	font-family: bebasBook;
+	float: left;
+	color: #C0C0C0;
+	font-weight: 700;
+	-webkit-transition: -webkit-transform 0.6s;
+	transition: transform 0.6s;
+}
+
+.link-border:hover,
+.link-border:focus {
+	-webkit-transform: scale(0.8333);
+	transform: scale(0.8333);
+	color: #e74c3c;
+}
+
+.link-border::before {
+	position: absolute;
+	top: -3px;
+	left: 50%;
+	margin-left: -190px;
+	box-sizing: content-box;
+	height: 100%;
+	border: 2px solid #e74c3c;
+	content: '';
+	opacity: 0;
+	-webkit-transition: opacity 0.2s, -webkit-transform 0.2s;
+	transition: opacity 0.2s, transform 0.2s;
+	-webkit-transform: scale(0.8333);
+	transform: scale(0.8333);
+}
+
+.link-border:hover::before,
+.link-border:focus::before {
+	opacity: 1;
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+#profile {
+	display: none;
+	position: relative;
+	width: 14%;
+	float: left;
+	text-align: center;
+	font-family: bebasLight;
+	letter-spacing: 12px;
+	font-size: 25px;
+	text-transform: uppercase;
+	-webkit-transition: color 0.2s;
+	transition: color 0.2s;
+}
+
+.link-braces:hover {
+	color: #d04c3f;
+}
+
+.link-braces::before,
+.link-braces::after {
+	position: absolute;
+	top: -5px;
+	font-weight: 100;
+	font-size: 150%;
+	line-height: 1;
+	opacity: 0;
+	-webkit-transition: opacity 0.2s, -webkit-transform 0.2s;
+	transition: opacity 0.2s, transform 0.2s;
+}
+
+.link-braces::before {
+	margin-left: -84px;
+	left: 50%;
+	content: '{';
+	-webkit-transform: translateX(-100%);
+	transform: translateX(-100%);
+}
+
+.link-braces::after {
+	right: 50%;
+	margin-right: -84px;
+	content: '}';
+	-webkit-transform: translateX(100%);
+	transform: translateX(100%);
+}
+
+.link-braces:hover::before,
+.link-braces:hover::after {
+	opacity: 1;
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+}
+
+
+
+
+/**
+
+		Module
+
+**/
+
+
+
+
+.parallax {
+	top: 110%;
+	position: fixed;
+	background: url('../images/unsplash.jpg') no-repeat center;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+}
+
+
+.wrapper {
+	position: relative;
+}
+
+.container-inner {
+	position: relative;
+	height: 100%;
+}
+
+#prologue {
+	position: relative;
+}
+
+.module-text-top {
+	
+	width: 80%;
+	left: 10%;
+	position: fixed;
+	top: 60%;
+	margin: 0 auto;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.headline {
+	position: relative;
+	z-index: 100;
+	font-size: 35px;
+	letter-spacing: 12px;
+	line-height: 1.5;
+	font-weight: 900;
+	color: #ccc;
+}
+
+.byline {
+	position: relative;
+	z-index: 1;
+	font-size: 15px;
+	letter-spacing: 4px;
+	text-align: center;
+	font-weight: 300;
+	margin-top: 3%;
+}
+
+.module-text{
+	width: 60%;
+	position: fixed;
+	top: 140%;
+	left: 20%;
+}
+
+.module-text p {
+	line-height: 1.5em;
+}
+
+.module-text a {
+	margin-left: 30px;
+	color: #555;
+}
+
+.module-text a:hover {
+	text-decoration: underline;
+}
+
+
+.tagline {
+	margin-top: 50px !important;
+}
+
+
+.mirror-holder {
+	padding-bottom: 45px;
+	margin-bottom: -19px;
+}
+
+.mirror-interactive {
+	width: 100%;
+	font-size: 45px;
+	text-align: center;
+	letter-spacing: 10px;
+	font-family: bebasBook;
+	float: left;
+	color: #C0C0C0;
+	font-weight: 700;
+}
+
+
+/***
+
+	Essays
+
+**/
+
+.essays {
+	margin-top: 200px;
+}
+
+.essays a:hover {
+	text-decoration: underline;
+}

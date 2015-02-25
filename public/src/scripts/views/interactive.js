@@ -5,52 +5,80 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    // Using the Require.js text! plugin, we are loaded raw text
-    // which will be used as our views primary template
     'text!docs/module.html'
 
 ], function($, _, Backbone, interactiveTemplate){
 
     var InteractiveView = Backbone.View.extend({
       
-        el: $('.container'),
+        el: $('.container-interactive'),
 
-        initialize: function(){
-        
+        $domEl: {
+
+            intro: $('#intro'),
+
+            introEffectSliced: $('.intro-effect-sliced'),
+
+            mirrorHolder: $('.mirror-holder'),
+
+            container: $('#container'),
+
+            introHeader:  $('.intro-header'),
+
+            interactive: $('.interactive'),
+
+            name: $('.name'),
+
+            programming: $('.programming'),
+
+            blockquote: $('blockquote')
+        },
+
+        programmingOffsetTop: function(){
+
+            return this.$domEl.programming.offset().top;
+        },
+
+        interactiveOffsetTop: function(){
+
+            return this.$domEl.interactive.offset().top;
         },
 
         render: function(){
 
-            // Using Underscore we can compile our template with data
             var data = {};
             var compiledTemplate = _.template( interactiveTemplate, data );
             
-            if( $('.programming').offset().top !== 0 ){
+            if( this.programmingOffsetTop() !== 0 ){
 
                 var y, translateY;
 
-                y = $('.interactive').offset().top;
+                y = this.interactiveOffsetTop();
 
-                translateY = y + 50;
+                translateY = y - 150;
 
-                $('.interactive').css({"transform": "translate(40px," + -translateY + "px ) scale(1.7)"});
+                this.$domEl.intro.css({"transform": "translate(279px," + -translateY + "px ) scale(1.7)"});
 
-                $('.intro-effect-sliced').addClass('modify');
+                this.$domEl.introEffectSliced.addClass('modify');
 
             } else {
 
-                $('.mirror-holder').append("<p class='mirror-interactive'>On Interaction</p>");
-                $('#intro').css('visibility', 'hidden');
+                this.$domEl.mirrorHolder.append("<h3 class='mirror-interactive'>On Interaction</h3>");
+                this.$domEl.intro.css('visibility', 'hidden');
             }
 
-            $('.intro-title').removeClass('link-border');
-            $('.name').css('visibility', 'hidden');
-            $('.programming').css('visibility', 'hidden');
+            this.$domEl.container.css('width','100%');
+            this.$domEl.introHeader.css('width', '40%');
+
+
+            this.$domEl.interactive.removeClass('link-border');
+            this.$domEl.name.css('visibility', 'hidden');
+            this.$domEl.programming.css('visibility', 'hidden');
 
 
             this.$el.append( compiledTemplate ).hide().fadeIn(1000);
 
-            $('blockquote').hide();
+            this.$domEl.blockquote.hide();
 
             var cinematic = new Kubrick([  
 

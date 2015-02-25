@@ -4,80 +4,111 @@ define([
 
     'jquery',
     'underscore',
-    'backbone',
-    'text!docs/intro.html'
+    'backbone'
 
-], function($, _, Backbone, homeTemplate){
+], function($, _, Backbone){
 
     var HomeView = Backbone.View.extend({
+
+        $domEl: {
+
+            body: $('body'),
+
+            introEffectSliced: $('.intro-effect-sliced'),
+
+            name: $('.name'),
+
+            container: $('#container'),
+
+            introHeader: $('.intro-header'),
+
+            intro: $('#intro'),
+
+            programming: $('.programming'),
+
+            interactive: $('.interactive'),
+
+            profile: $('#profile'),
+
+            containerInteractive: $('.container-interactive'),
+
+            mirrorHolder: $('.mirror-holder'),
+
+            containerInner: $('.container-inner'),
+
+            blockQuote: $('blockquote')
+        },
         
         el: $('#intro'),
-        $body: $('body'),
+
         $window: $(window),
 
         render: function(){
 
-            var bodyHeight    = this.$body.height();
+            var bodyHeight    = this.$domEl.body.height();
             var windowHeight  = this.$window.height();
 
             if (bodyHeight > windowHeight) {
 
-                this.$body.height(windowHeight);
+                this.$domEl.body.height(windowHeight);
             }
 
-            var data = {};
-            var compiledTemplate = _.template( homeTemplate, data );
+            var that = this;
 
-        // if ($('#intro').css('visibility', 'hidden')) {
-
-        //     $('#intro').css('visibility', 'visible');
-        // }
-
-            if ( $('.intro-effect-sliced').hasClass('modify')) {
+            if ( this.$domEl.introEffectSliced.hasClass('modify')) {
 
                 var y, translateY;
 
-                y = $('.name').offset().top;
+                y = this.$domEl.name.offset().top;
 
                 translateY = y / 300;
 
-                $('.interactive').css({"transform": "translate(-20px," + translateY + "px ) scale(1)"});
+                // first the css transformation between two states
+                this.$domEl.container.css('width','75%');
+                this.$domEl.introHeader.css('width', '50%');
+                this.$domEl.intro.css({"transform": "translate(-10px," + translateY + "px ) scale(1)"});
 
-                $('.name').css('visibility', 'visible');
-                $('.programming').css('visibility', 'visible');
-                $('blockquote').show();
-                $('.intro-effect-sliced').removeClass('modify');
-                $('.intro-title').addClass('link-border');
-                $('.container').empty();
+                this.$domEl.name.css('visibility', 'visible');
+                this.$domEl.programming.css('visibility', 'visible');
+                
+                // re set css
+                this.$domEl.introEffectSliced.removeClass('modify');
+                this.$domEl.interactive.addClass('link-border');
+                this.$domEl.containerInteractive.empty();
 
             } else if ($('.mirror-interactive').length){
 
-                $('.name').css('visibility', 'visible');
-                $('.programming').css('visibility', 'visible');
-                $('blockquote').show();
-                $('#intro').css('visibility', 'visible');
+                this.$domEl.container.css('width','75%');
+                this.$domEl.introHeader.css('width', '50%');
+                this.$domEl.name.css('visibility', 'visible');
+                this.$domEl.programming.css('visibility', 'visible');
+                
+                this.$domEl.intro.css('visibility', 'visible');
+                this.$domEl.interactive.addClass('link-border');
 
-                $('.mirror-interactive').hide();
-                $('.container-inner').remove();
+                this.$domEl.mirrorHolder.empty();
+                this.$domEl.containerInteractive.empty();
+                this.$domEl.containerInner.remove();
 
-                this.$el.append( compiledTemplate ).hide().fadeIn(900, function(){
+                this.$domEl.intro.hide().fadeIn(900, function(){
 
-                    $('.intro-effect-sliced').removeClass('modify');
-                    $('#profile').fadeIn(1000);
+                    that.$domEl.introEffectSliced.removeClass('modify');
+                    that.$domEl.profile.fadeIn(1000);
                 });
 
             } else {
 
-                $('.name').css('visibility', 'visible');
-                
-                this.$el.append( compiledTemplate ).hide().fadeIn(900, function(){
+                this.$domEl.name.css('visibility', 'visible');
 
-                    $('.intro-effect-sliced').removeClass('modify');
-                    $('#profile').fadeIn(1000);
+                this.$domEl.intro.hide().fadeIn(900, function(){
+
+                    that.$domEl.introEffectSliced.removeClass('modify');
+                    that.$domEl.profile.fadeIn(1000);
                 });
             }
 
-        $('blockquote').show();
+        this.$domEl.body.height(0);
+        this.$domEl.blockQuote.show();
         
         }
     });

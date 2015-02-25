@@ -13,7 +13,7 @@ module.exports =  Backbone.Collection.extend({
 
 	url: function(){
 
-		return 'api/flickr/' + this.category;
+		return '/api/flickr/' + this.category;
 	},
 
 	model: Slide,

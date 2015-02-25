@@ -8,7 +8,9 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res) {
 
-	res.render('home');
+	res.render('home', {
+        useRequire: true
+    });
 
 });
 
@@ -18,58 +20,18 @@ router.get('/interactive', function(req, res) {
 
 });
 
-router.get('/programming', function(req, res) {
+router.get('/essays', function(req, res) {
 
-	res.render('programming', {
-		noRequire: true
-	});
+	res.render('essays');
 
 });
 
-// router.get('/depersgroep', function(req, res) {
 
-// 	res.render('depersgroep', {
-// 		dePersgroep: true
-// 	});
+router.get('/essays/on-photography', function(req, resp){
 
-// });
-
-router.get('/photography', function(req, resp){
-
-	//var flickr = Photo.photoSet('food');
-
-	       	resp.render('photography/index', {
-				layout: 'mobile'
-			});
-
-	// https.get(flickr, function(res) {
-
-	//     var str = '';
-
- //        res.on('data', function (chunk) {
-
- //            str += chunk;
- //         });
-
- //        res.on('end', function () {
-
- //        	var obj = JSON.parse(str);
-
- //        	//console.log(obj.photoset);
-
- //        	var length = obj.photoset.photo.length;
- //        	var flickrData = Photo.collectImages(length, obj);
-
- //        	resp.render('photography/index', {
-	// 			layout: 'mobile',
-	// 			flickrData: flickrData
-	// 		});
- //        });
-
-	// }).on('error', function(e){
-
-	// 	console.error(e);
-	// });
+   	resp.render('photography/index', {
+		layout: 'mobile'
+	});
 });
 
 router.get('/api/flickr/:category', function(req, resp){

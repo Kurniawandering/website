@@ -3,10 +3,17 @@
 
 <head>
     <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kubrick Cinematic Movement</title>
 
-   	<script data-main="src/scripts/main" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.14/require.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="dist/css/style.min.css">
+    {{#if useRequire }}
+
+   		<script data-main="src/scripts/main" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.14/require.min.js"></script>
+
+   	{{/if}}
+
+    <link rel="stylesheet" type="text/css" href="/dist/css/home.min.css">
+
 
 </head>
 

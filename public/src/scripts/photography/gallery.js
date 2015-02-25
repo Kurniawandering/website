@@ -28,6 +28,8 @@ module.exports = Backbone.View.extend({
 
 		this.category = options.category;
 
+		console.log('best lang');
+
 		this.$container.append('<div class="overlay"></div>');
 
 		this.collection = new flickrData( [], { category: this.category} );
@@ -119,7 +121,7 @@ module.exports = Backbone.View.extend({
 
        		self.$container.empty().append(self.$el);
 
-       	}, 200);
+       	}, 800);
 
 		return this;
 
