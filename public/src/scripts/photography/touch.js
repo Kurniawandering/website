@@ -37,9 +37,23 @@ var dragElement = function(event){
 
 	var currentX = event.deltaX + targetX;
 
+	if ( event.deltaY >= Math.abs( event.deltaX )) {
+
+		return;
+	}
+
+	if (event.deltaY >= 20) {
+
+		return;
+	}
+
 	if (currentX < 0 && currentX > -mainWidth*2) {
 
-		cachedEl('nav').css('transform', 'translateX(' + currentX + 'px)');
+		cachedEl('nav').css({
+			
+			'transform': 'translateX(' + currentX + 'px)',
+			'transition': 'none'
+		});
 	}
 };
 
@@ -52,33 +66,53 @@ var swipeElement = function(event){
 
 var resetElement = function(event){
 
+	if (event.deltaX > 0 && targetX === 0) {
+		return;
+	}
+
+	if ( event.deltaX < 0 && targetX / mainWidth === -2) {
+
+		return;
+	}
+
+
 	if (Math.abs( event.deltaX )> mainWidth / 2) {
 
 		if (event.deltaX < 0) {
 
-			cachedEl('nav').css('transform', 'translateX(' +  parseFloat(targetX-mainWidth) + 'px)');
+			cachedEl('nav').css({
+
+				'transform': 'translateX(' +  parseFloat(targetX-mainWidth) + 'px)',
+				'transition': '-webkit-transform 300ms cubic-bezier(.17,.67,.69,1.33)'
+	 		});
 
 			targetX = targetX - mainWidth;
 
 		} else {
 
-			cachedEl('nav').css('transform', 'translateX(' +  parseFloat(targetX + mainWidth) + 'px)');
+			cachedEl('nav').css({
+				
+				'transform': 'translateX(' +  parseFloat(targetX + mainWidth) + 'px)',
+				'transition': '-webkit-transform 300ms cubic-bezier(.17,.67,.69,1.33)'
+			});
 
 			targetX = targetX + mainWidth;
 		}
 
 	} else {
 
-		cachedEl('nav').css('transform', 'translateX(' + targetX + 'px)');
+		cachedEl('nav').css({
+			
+			'transform': 'translateX(' + targetX + 'px)',
+			'transition': '-webkit-transform 300ms cubic-bezier(.17,.67,.69,1.33)'
+		});
 	}
 };
 
 
 var initTouchListeners = function(element){
 
-	var touchControl = new Hammer(element,{
-		touchAction: 'pan-x'
-	});
+	var touchControl = new Hammer(element);
 
 	touchControl.on('pan', dragElement)
 				.on('swipe', swipeElement)

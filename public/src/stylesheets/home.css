@@ -192,7 +192,6 @@ Home -- body
 .text-partial {
 	position: relative;
 	width: 27%;
-	/*min-width: 320px;*/
 }
 
 .text-wrapper {
@@ -440,4 +439,65 @@ Home -- body
 
 .essays a:hover {
 	text-decoration: underline;
+}
+
+
+@media (max-width: 1200px) {
+
+	html, body {
+
+	    height: 100% !important;
+	}
+
+	#container {
+		
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+
+	#intro {
+
+		display: none !important;
+	}
+
+	.name {
+
+		float: none;
+		width: 100%;
+		margin: 100px auto;
+		text-align: center;
+	}
+
+	.name::after {
+
+		display: none;
+	}
+
+	#profile {
+
+		float: none;
+		width: 100%;
+	}
+
+	.link-braces::before {
+
+		display: none;
+	}
+
+	.link-braces::after {
+
+		display: none;
+	}
+
+	.intro-header {
+
+		display: none;
+	}
+
+	.essays {
+
+		margin-top: 100px;
+	}
 }
