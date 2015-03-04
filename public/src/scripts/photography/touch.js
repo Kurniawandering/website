@@ -42,7 +42,7 @@ var dragElement = function(event){
 		return;
 	}
 
-	if (event.deltaY >= 20) {
+	if (Math.abs(event.deltaY) >= 20) {
 
 		return;
 	}
@@ -60,6 +60,12 @@ var dragElement = function(event){
 
 var swipeElement = function(event){
 
+	if (Math.abs(event.deltaY) >= 40) {
+
+		return;
+	}
+
+
 	cachedEl('nav').css('transform', 'translateX(' + targetX + 'px)');
 };
 
@@ -74,6 +80,11 @@ var resetElement = function(event){
 
 		return;
 	}
+
+	// if (Math.abs(event.deltaY) >= 40) {
+
+	// 	return;
+	// }
 
 
 	if (Math.abs( event.deltaX )> mainWidth / 2) {
