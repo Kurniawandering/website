@@ -30,6 +30,8 @@ animations.init = function(){
 
 			$main.css('overflow-y', 'scroll');
 
+			$('.content-switch').addClass('current');
+
 			// second stage of ui
 			$('.content-switch.back').show();
 
@@ -90,7 +92,9 @@ animations.init = function(){
 	 			'transition': '-webkit-transform 300ms cubic-bezier(.17,.67,.69,1.33)'
 	 		});
 
-	 				$('main')[0].scrollTop = 0;
+	 		$('main')[0].scrollTop = 0;
+
+	 		$('.content-switch').removeClass('current');
 
 	 	}, 400);
 

@@ -57,7 +57,7 @@ define([
 
                 translateY = y - 150;
 
-                this.$domEl.intro.css({"transform": "translate(279px," + -translateY + "px ) scale(1.7)"});
+                this.$domEl.intro.css({"transform": "translate(50%," + -translateY + "px ) scale(1.7)"});
 
                 this.$domEl.introEffectSliced.addClass('modify');
 

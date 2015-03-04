@@ -245,8 +245,7 @@ Home -- body
 .link-border::before {
 	position: absolute;
 	top: -3px;
-	left: 50%;
-	margin-left: -190px;
+	left: -10px;
 	box-sizing: content-box;
 	height: 100%;
 	border: 2px solid #e74c3c;

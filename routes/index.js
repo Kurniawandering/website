@@ -34,6 +34,14 @@ router.get('/essays/on-photography', function(req, resp){
 	});
 });
 
+
+router.get('/essays/spotify', function(req, resp){
+
+    resp.render('essays/spotify', {
+        layout: 'essays'
+    });
+});
+
 router.get('/api/flickr/:category', function(req, resp){
 
 	var flickr = Photo.photoSet(req.param('category'));
@@ -65,6 +73,16 @@ router.get('/api/flickr/:category', function(req, resp){
         });
 
 	});
+});
+
+
+router.get('/services/api/spotify', function( req, res ){
+
+
+    console.log(res.locals.test);
+
+    res.send('hello');
+
 });
 
 

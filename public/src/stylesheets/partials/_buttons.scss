@@ -50,6 +50,10 @@ button.content-switch.more {
 	top: 100%;
 }
 
-button.content-switch.back {
+button.content-switch.back{
 	top: 20%;
+}
+
+button.content-switch.current::before {
+	content: '\e096';
 }
