@@ -57,8 +57,13 @@ define([
 
                 translateY = y - 150;
 
-                this.$domEl.intro.css({"transform": "translate(50%," + -translateY + "px ) scale(1.7)"});
+                var windowWidth = $(window).width();
 
+                var calcRelation = 17 / (1918 - 1278);
+
+                var translateX = 57 + Math.ceil((windowWidth - 1278) * calcRelation);
+
+                this.$domEl.intro.css({"transform": "translate(" + translateX + "%," + -translateY + "px ) scale(1.7)"});
                 this.$domEl.introEffectSliced.addClass('modify');
 
             } else {
@@ -68,7 +73,7 @@ define([
             }
 
             this.$domEl.container.css('width','100%');
-            this.$domEl.introHeader.css('width', '40%');
+            this.$domEl.introHeader.css('width', '35%');
 
 
             this.$domEl.interactive.removeClass('link-border');

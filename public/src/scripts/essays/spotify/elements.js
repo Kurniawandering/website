@@ -2,10 +2,13 @@
 
 var elements = {
 
-	    //var templateSource 		= document.getElementById('result-template').innerHTML,
-        //template 			= Handlebars.compile(templateSource),
-        //resultsPlaceholder 	= document.getElementById('result'),
-    loginButton	: document.getElementById('btn-login')
+    userPlaceholder 	: document.getElementById('user-profile'),
+    loginButton			: document.getElementById('btn-login'),
+    polygonProfile 		: document.getElementById('polygon-profile'),
+    polygonProfileInner : document.getElementById('polygon-profile-inner'),
+    canvasWrapper 		: document.querySelector('.canvas-wrapper'),
+    spotifyContent 		: document.querySelector('.spotify-content'),
+    albumImages 		: document.querySelector('.album-images')
 };
 
 module.exports = elements;

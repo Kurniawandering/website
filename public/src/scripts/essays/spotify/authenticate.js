@@ -8,41 +8,22 @@ var w;
 var authenticate = {
 
 	login: function(callback){
-        
-        
+         
         var url = this.getLoginURL([ 'user-read-email' ]);
 
-        //this.listenToCallback(callback);
-        //
-        // window.addEventListener('message', function(event) {
-
-        //     var hash = JSON.parse(event.data);
-
-        //     if (hash.type === 'access_token') {
-
-        //         callback(hash.access_token);
-        //     }
-
-        //     w.close();
-
-        // }, false);
-
+        this.listenToCallback(callback);
         this.openAuthWindow(url);
-        
-        w.addEventListener('message', function(event) {
 
-            console.log(event.data);
+        setInterval(function(){
 
-            var hash = JSON.parse(event.data);
+            if (w.location.hash) {
 
-            if (hash.type === 'access_token') {
+                var popupHash = w.location.hash.substr(1);
 
-                callback(hash.access_token);
+                window.postMessage(popupHash, '*');
             }
 
-            w.close();
-
-        }, false);
+        }, 200);
 	},
 
 	getLoginURL: function(scopes){
@@ -89,11 +70,14 @@ var authenticate = {
         
         window.addEventListener('message', function(event) {
 
-            var hash = JSON.parse(event.data);
+            if (event.data) {
 
-            if (hash.type === 'access_token') {
+                var hash = JSON.parse('{"' + decodeURI(event.data).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}');
+        
+                if (hash.token_type === 'Bearer') {
 
-                callback(hash.access_token);
+                    callback(hash.access_token);
+                }                            
             }
 
             w.close();

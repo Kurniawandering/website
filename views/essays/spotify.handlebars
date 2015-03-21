@@ -1,6 +1,39 @@
-<div class="container">
-    <h1>Displaying User Data</h1>
-    <p>Log in with your Spotify account and this demo will display information about you fetched using the Spotify Web API</p>
-    <button class="btn btn-primary" id="btn-login">Login</button>
-    <div id="result"></div>
-</div>
+<header class='spotify-header'>
+	<section class='spotify-container'>
+
+		<div class="intro">
+
+			<h1>An experiment on Canvas &amp; Spotify Web API</h1> 
+			<p>
+	    	<button class="btn btn-spotify" id="btn-login">Login</button>				
+			</p>
+
+		</div>
+
+	    <div id="user-profile"></div>
+
+		<div class="canvas-wrapper">		
+			<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="500" height="600" viewBox="0 0 550 660" xmlns:xlink="http://www.w3.org/1999/xlink">
+			  
+				<g>
+				   <clipPath id="hex-mask">
+				      <polygon points="275,0 30,160 30,405 275,545 530,405 530,160" />
+				   </clipPath>
+				</g>
+
+				<image id="polygon-profile" clip-path="url(#hex-mask)" height="660" width="550" preserveAspectRatio="xMidYMin meet" xlink:href="/dist/images/spotify.jpg" />
+				<image id="polygon-profile-inner" clip-path="url(#hex-mask)" height="660" width="550" preserveAspectRatio="xMidYMin meet" transform="scale(0.5) translate(274, 275)" xlink:href="/dist/images/spotify.jpg" />
+
+			</svg>
+		</div>
+
+	</section>	
+</header>
+
+
+<section class='spotify-content'>
+
+		<div class="album-images"></div>
+
+</section>
+

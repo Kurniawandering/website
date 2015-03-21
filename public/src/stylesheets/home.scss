@@ -35,7 +35,7 @@
 	body {
 		line-height: 1;
 	}
-	ol, ul {
+	ul {
 		list-style: none;
 	}
 	blockquote, q {
@@ -58,6 +58,7 @@
 
 	body {
 		font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+		overflow-x: hidden;
 	}
 
 	article {
@@ -76,7 +77,7 @@
 	 	text-decoration: none;
 	}
 
-	ul li {
+	ul li, ol li {
 		margin-bottom: 15px;
 	}
 
@@ -127,6 +128,17 @@
 	@font-face {
 		font-family: neuzeHeavy;
 		src: url('../fonts/neuze/NeuzeitSLTStd-BookHeavy.otf');
+	}
+
+	@font-face {
+	    font-family: 'Spartan';
+	    src: url('../fonts/spartan/leaguespartan-bold.eot');
+	    src: url('../fonts/spartan/leaguespartan-bold.eot?#iefix') format('embedded-opentype'),
+	         url('../fonts/spartan/leaguespartan-bold.woff2') format('woff2'),
+	         url('../fonts/spartan/leaguespartan-bold.woff') format('woff'),
+	         url('../fonts/spartan/leaguespartan-bold.ttf') format('truetype'),
+	         url('../fonts/spartan/leaguespartan-bold.svg#league_spartanbold') format('svg');
+	    font-style: normal;
 	}
 
 /*
@@ -433,11 +445,30 @@ Home -- body
 **/
 
 .essays {
+	font-family: 'Spartan';
+	font-size: 14px;
 	margin-top: 200px;
 }
 
 .essays a:hover {
 	text-decoration: underline;
+}
+
+.essays-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #f2f2f2;
+}
+
+.home {
+	position: fixed;
+	top: 50px;
+	left: 0;
+	padding: 10px 20px 10px 20px;
+	background: lighten(red, 20%);
 }
 
 

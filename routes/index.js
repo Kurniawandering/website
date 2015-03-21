@@ -42,6 +42,22 @@ router.get('/essays/spotify', function(req, resp){
     });
 });
 
+
+router.get('/essays/profile-image', function(req, resp){
+
+    resp.render('essays/profile-image', {
+        layout: 'essays'
+    });
+});
+
+
+router.get('/essays/button', function(req, resp){
+
+    resp.render('essays/button', {
+        layout: 'essays'
+    });
+});
+
 router.get('/api/flickr/:category', function(req, resp){
 
 	var flickr = Photo.photoSet(req.param('category'));
