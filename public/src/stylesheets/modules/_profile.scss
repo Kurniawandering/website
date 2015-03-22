@@ -1,0 +1,75 @@
+.profile-container {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background: bisque;
+}
+
+.profile-wrapper {
+	position: relative;
+	overflow: hidden;
+	width: 160px;
+	height: 152px;
+	margin: 200px auto;
+	border: 4px solid whitesmoke;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+.profile-wrapper img {
+	width: 100%;
+}
+
+.timeline-profile {
+
+	height: 100%;
+}
+
+.icon-wrapper {
+	width: 160px;
+	height: 48px;
+	position: absolute;	
+	top: 153px;
+	background-color: black;
+	transition: all .1s ease-out;
+	
+	span {
+		display: block;
+		font-family: 'Spartan';
+		width: 120px;
+		margin-left: 40px;
+		margin-top: 11px;
+		line-height: 16px;
+		color: white;
+		font-size: 10px;
+	}
+}
+
+.profile-icon-camera {
+	display: inline-block;
+	position: absolute;
+	top: 120px;
+	left: 4px;
+	background: url('/dist/images/icon-camera.png') top left no-repeat;
+	background-size: 100%;
+	opacity: 0.8;
+	height: 30px;
+	width: 35px;
+	transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+}
+
+.profile-wrapper:hover .profile-icon-camera {
+	transform: scale(0.7);
+	z-index: 1;
+	opacity: 1;
+	top: 115px;
+	left: 2px;
+}
+
+.profile-wrapper:hover .icon-wrapper {
+	top: 105px;
+	opacity: 0.7;
+}

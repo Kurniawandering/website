@@ -35,25 +35,25 @@ router.get('/essays/on-photography', function(req, resp){
 });
 
 
-router.get('/essays/spotify', function(req, resp){
+router.get('/essays/on-spotify', function(req, resp){
 
-    resp.render('essays/spotify', {
+    resp.render('essays/on-spotify', {
         layout: 'essays'
     });
 });
 
 
-router.get('/essays/profile-image', function(req, resp){
+router.get('/essays/on-profile-image', function(req, resp){
 
-    resp.render('essays/profile-image', {
+    resp.render('essays/on-profile-image', {
         layout: 'essays'
     });
 });
 
 
-router.get('/essays/button', function(req, resp){
+router.get('/essays/on-buttons', function(req, resp){
 
-    resp.render('essays/button', {
+    resp.render('essays/on-buttons', {
         layout: 'essays'
     });
 });
