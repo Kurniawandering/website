@@ -42,6 +42,12 @@ router.get('/essays/on-spotify', function(req, resp){
     });
 });
 
+router.get('/essays/on-buttons', function(req, resp){
+
+    resp.render('essays/on-buttons', {
+        layout: 'essays'
+    });
+});
 
 router.get('/essays/on-profile-image', function(req, resp){
 
