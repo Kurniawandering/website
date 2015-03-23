@@ -56,10 +56,9 @@ router.get('/essays/on-profile-image', function(req, resp){
     });
 });
 
+router.get('/essays/grid', function(req, resp){
 
-router.get('/essays/on-buttons', function(req, resp){
-
-    resp.render('essays/on-buttons', {
+    resp.render('essays/grid', {
         layout: 'essays'
     });
 });
