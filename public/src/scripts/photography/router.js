@@ -6,7 +6,7 @@ var Backbone 	= require('backbone'),
 var GalleryView 		= require('./gallery'),
 	SlidesCollection	= require('./collection');
 
-var $navPills			= $('nav').find('li'),
+var $navPills			= $('.photography-navwrap').find('li'),
 	$food				= $('.food'),
 	$portrait			= $('.portrait'),
 	$walk				= $('.walk'),

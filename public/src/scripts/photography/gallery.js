@@ -21,6 +21,8 @@ module.exports = Backbone.View.extend({
 
 		this.$container = $('.carousel');
 
+		$('.carousel-nav').show();
+
 		if (options.category === 'home') {
 
 			return this.viewHome();

@@ -8,7 +8,7 @@ var kubrickTouch = {};
 
 var targetX = 0;
 
-var mainWidth = $('main').width();
+var mainWidth = $('.photography-mainwrap').width();
 
 
 var cachedEl = function(query){
@@ -49,7 +49,7 @@ var dragElement = function(event){
 
 	if (currentX < 0 && currentX > -mainWidth*2) {
 
-		cachedEl('nav').css({
+		cachedEl('.photography-navwrap').css({
 			
 			'transform': 'translateX(' + currentX + 'px)',
 			'transition': 'none'
@@ -66,7 +66,7 @@ var swipeElement = function(event){
 	}
 
 
-	cachedEl('nav').css('transform', 'translateX(' + targetX + 'px)');
+	cachedEl('.photography-navwrap').css('transform', 'translateX(' + targetX + 'px)');
 };
 
 
@@ -91,7 +91,7 @@ var resetElement = function(event){
 
 		if (event.deltaX < 0) {
 
-			cachedEl('nav').css({
+			cachedEl('.photography-navwrap').css({
 
 				'transform': 'translateX(' +  parseFloat(targetX-mainWidth) + 'px)',
 				'transition': '-webkit-transform 300ms cubic-bezier(.17,.67,.69,1.33)'
@@ -101,7 +101,7 @@ var resetElement = function(event){
 
 		} else {
 
-			cachedEl('nav').css({
+			cachedEl('.photography-navwrap').css({
 				
 				'transform': 'translateX(' +  parseFloat(targetX + mainWidth) + 'px)',
 				'transition': '-webkit-transform 300ms cubic-bezier(.17,.67,.69,1.33)'
@@ -112,7 +112,7 @@ var resetElement = function(event){
 
 	} else {
 
-		cachedEl('nav').css({
+		cachedEl('.photography-navwrap').css({
 			
 			'transform': 'translateX(' + targetX + 'px)',
 			'transition': '-webkit-transform 300ms cubic-bezier(.17,.67,.69,1.33)'

@@ -9,8 +9,8 @@ var animations = {};
 
 var contentSwitchMore 	= $('.content-switch.more'),
 	contentSwitchBack 	= $('.content-switch.back'),
-	$nav 				= $('nav'),
-	$main 				= $('main'),
+	$nav 				= $('.photography-navwrap'),
+	$main 				= $('.photography-mainwrap'),
 	$subNav 			= $('.subnav'),
 	$mainNav 			= $('.mainnav').find('li');
 
@@ -44,7 +44,7 @@ animations.init = function(){
 
 	contentSwitchBack.click(function(event){
 
-		var mainWidth = $('main').width();
+		var mainWidth = $('.photography-mainwrap').width();
 
 		var currentHash = $(location).attr('hash');
 
@@ -79,7 +79,6 @@ animations.init = function(){
 
 	 	$('.content-switch.back').hide();
 
-
 	 	$nav.css({
 	 		'transform': 'translate(' + transformX + 'px, -90%)',
 	 		'transition': 'none'
@@ -92,7 +91,7 @@ animations.init = function(){
 	 			'transition': '-webkit-transform 300ms cubic-bezier(.17,.67,.69,1.33)'
 	 		});
 
-	 		$('main')[0].scrollTop = 0;
+	 		$('.photography-mainwrap')[0].scrollTop = 0;
 
 	 		$('.content-switch').removeClass('current');
 

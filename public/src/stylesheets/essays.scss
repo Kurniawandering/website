@@ -1,11 +1,10 @@
 
-@import "partials/reset";
-@import "partials/base";
+@import "partials/normalize";
 @import "partials/fonts";
-@import "partials/page";
 @import "partials/buttons";
+@import "partials/layout";
 
+@import "modules/photography";
 @import "modules/spotify";	
 @import "modules/buttons";
 @import "modules/profile";
-

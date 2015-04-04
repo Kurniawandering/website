@@ -1,5 +1,102 @@
-ul li img {
-    width: 100%;
+.photography-mainwrap {
+    width: 80%;
+    max-width: 1700px;
+    margin: 0 auto;
+
+    p {
+        font-weight: light;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    a {
+        color: #898989;
+        text-decoration: none;
+
+        &:hover {
+            color: #130f30;
+        }
+    }
+}
+
+.photography-header {
+    width: 70%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+	h2 {
+		display: inline-block;
+		text-transform: uppercase;
+	}
+
+	span {
+		font-size: 14px;
+	}
+}
+
+.photography-navwrap {
+	position: relative;
+    float: right;
+	height: 100%;
+	width: 10%;
+
+	a {
+		font-size: 14px;
+	}
+
+    ul {
+        margin: 0;
+        padding-left: 2px;
+    }
+
+	li {
+		margin-bottom: 5px;
+
+		img {
+			width: 100%
+		}
+
+		&.active a {
+			color: #130f30;
+		}
+	}
+
+	.mainnav {
+		position: relative;
+		height: 200px;
+		background: white;
+		z-index: 10;
+	}
+
+	.subnav {
+		display: none;
+		position: absolute;
+		top: 45px;
+		width: 100px;
+		border-top: 1px solid #130f30;
+		padding-top: 10px;
+		z-index: 0;
+		transition-duration: .5s;
+
+		li {
+			margin-bottom: 15px;
+		}
+	}
+}
+
+.clear {
+	clear: both;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 button.content-switch.back {
@@ -12,7 +109,7 @@ button.content-switch.back {
         float: left;
         width: 640px;
         height: 100%;
-        margin-left: 16%;
+        margin-left: 10%;
 	}
 
 	.carousel {
@@ -20,6 +117,7 @@ button.content-switch.back {
 
         ul {
             width: 55999px; /** just another very big number **/
+            padding: 0;
             position: relative;
             overflow: hidden;
         }
@@ -59,7 +157,7 @@ button.content-switch.back {
 
 @media (max-width: 1040px) {
 
-    body {
+    .on-photography {
         position: absolute;
         top: 0;
         left: 0;
@@ -67,7 +165,16 @@ button.content-switch.back {
         height: 100%;
     }
 
-    main {
+    ul {
+        -webkit-margin-before: 0;
+        -webkit-margin-after: 0;
+        -webkit-padding-start: 0;
+    }
+    img {
+        width: 100%;
+    }
+
+    .photography-mainwrap {
         position: relative;
         margin: 0 auto;
         width: 100%;
@@ -76,24 +183,48 @@ button.content-switch.back {
         -webkit-overflow-scrolling: touch;
     }
 
-    header {
+    .photography-header {
         display: none;
     }
 
-    nav {
+    .photography-navwrap {
         position: absolute;
         top: 0;
         left: 0;
         width: 400%;
         height: 100%;
         font-size: 0;
+
+        .mainnav {
+            height: 100%;
+        }
+        .noselect {
+            display: none;
+        }
+        .inner {
+            text-align: center;
+            font-size: 50px;
+            opacity: 0.7;
+            height: 325px;
+            margin: auto;
+            position: absolute;
+            top: 0; 
+            left: 0; 
+            bottom: 0; 
+            right: 0;
+
+            &.white h2{
+                color: white;
+            }
+        }
     }
 
-    nav ul {
+    .photography-navwrap ul {
         height: inherit;
+        padding-left: 0;
     }
 
-    nav ul li {
+    .photography-navwrap li {
         display: inline-block;
         position: relative;
         margin: 0;
@@ -102,41 +233,38 @@ button.content-switch.back {
         font-size: 16px;
     }
 
-    nav ul li:nth-child(1) {
+    .photography-navwrap li:nth-child(1) {
         background-image: url('/dist/images/food.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center; 
     }
 
-    nav ul li:nth-child(2) {
+    .photography-navwrap li:nth-child(2) {
         background-image: url('/dist/images/portrait.jpg');
         background-repeat: no-repeat;
         background-size: cover; 
         background-position: center; 
     }
 
-    nav ul li:nth-child(3) {
+    .photography-navwrap li:nth-child(3) {
         background-image: url('/dist/images/walk.jpg');
         background-repeat: no-repeat;
         background-size: cover; 
         background-position: center; 
     }
 
-    nav ul li:nth-child(4) {
+    .photography-navwrap li:nth-child(4) {
         background-image: url('/dist/images/4.jpg');
         background-repeat: no-repeat;
         background-size: cover; 
         background-position: center; 
     }
 
-    .mainnav {
-        height: 100%;
-    }
 
 	.gallery-container {
         width: 100%;
-		margin: 10px auto 0 auto;
+		margin: 0 auto;
 	}
 
     .overlay {
@@ -151,25 +279,7 @@ button.content-switch.back {
         background-position: center; 
     }
 
-    .noselect {
+    .carousel-nav {
         display: none;
-    }
-
-    .inner {
-        text-align: center;
-        font-size: 50px;
-        opacity: 0.7;
-        height: 325px;
-        margin: auto;
-        position: absolute;
-        top: 0; 
-        left: 0; 
-        bottom: 0; 
-        right: 0;
-    }
-
-    .inner.white h2{
-        color: white;
-
     }
 }

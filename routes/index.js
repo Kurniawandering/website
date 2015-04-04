@@ -30,7 +30,8 @@ router.get('/essays', function(req, res) {
 router.get('/essays/on-photography', function(req, resp){
 
    	resp.render('photography/index', {
-		layout: 'mobile'
+		layout: 'essays',
+        bodyClass: 'on-photography'
 	});
 });
 
@@ -38,7 +39,8 @@ router.get('/essays/on-photography', function(req, resp){
 router.get('/essays/on-spotify', function(req, resp){
 
     resp.render('essays/on-spotify', {
-        layout: 'essays'
+        layout: 'essays',
+        bodyClass: 'on-spotify'
     });
 });
 
