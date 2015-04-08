@@ -41,36 +41,6 @@ router.get('/essays/:on', function(req, res){
     });
 });
 
-
-// router.get('/essays/on-spotify', function(req, resp){
-
-//     resp.render('essays/on-spotify', {
-//         layout: 'essays',
-//         bodyClass: 'on-spotify'
-//     });
-// });
-
-// router.get('/essays/on-buttons', function(req, resp){
-
-//     resp.render('essays/on-buttons', {
-//         layout: 'essays'
-//     });
-// });
-
-// router.get('/essays/on-profile-image', function(req, resp){
-
-//     resp.render('essays/on-profile-image', {
-//         layout: 'essays'
-//     });
-// });
-
-// router.get('/essays/parallax', function(req, resp){
-
-//     resp.render('essays/parallax', {
-//         layout: 'essays'
-//     });
-// });
-
 router.get('/api/flickr/:category', function(req, resp){
 
 	var flickr = Photo.photoSet(req.param('category'));
@@ -103,16 +73,5 @@ router.get('/api/flickr/:category', function(req, resp){
 
 	});
 });
-
-
-router.get('/services/api/spotify', function( req, res ){
-
-
-    console.log(res.locals.test);
-
-    res.send('hello');
-
-});
-
 
 module.exports = router;
