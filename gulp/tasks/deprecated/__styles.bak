@@ -1,0 +1,8 @@
+// gulp.task('home-styles',  function(){
+
+//     return gulp.src('public/src/stylesheets/home.scss')
+//         .pipe(sass())
+//         .pipe(rename({suffix: '.min'}))
+//         .pipe(minifycss())
+//         .pipe(gulp.dest('public/dist/css'));
+// });
