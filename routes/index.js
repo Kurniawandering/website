@@ -25,44 +25,51 @@ router.get('/essays', function(req, res) {
 
 });
 
-
 router.get('/essays/on-photography', function(req, resp){
 
-   	resp.render('photography/index', {
-		layout: 'essays',
-        bodyClass: 'on-photography'
-	});
-});
-
-
-router.get('/essays/on-spotify', function(req, resp){
-
-    resp.render('essays/on-spotify', {
+    resp.render('photography/index', {
         layout: 'essays',
-        bodyClass: 'on-spotify'
+        bodyClass: 'on-photography'
     });
 });
 
-router.get('/essays/on-buttons', function(req, resp){
-
-    resp.render('essays/on-buttons', {
-        layout: 'essays'
+router.get('/essays/:on', function(req, res){
+    res.render('essays/' + req.param('on'), {
+        layout:     'essays',
+        bodyClass:  req.param('on'),
+        jsFile:     '/dist/js/essays/' + req.param('on') + '.js'
     });
 });
 
-router.get('/essays/on-profile-image', function(req, resp){
 
-    resp.render('essays/on-profile-image', {
-        layout: 'essays'
-    });
-});
+// router.get('/essays/on-spotify', function(req, resp){
 
-router.get('/essays/grid', function(req, resp){
+//     resp.render('essays/on-spotify', {
+//         layout: 'essays',
+//         bodyClass: 'on-spotify'
+//     });
+// });
 
-    resp.render('essays/grid', {
-        layout: 'essays'
-    });
-});
+// router.get('/essays/on-buttons', function(req, resp){
+
+//     resp.render('essays/on-buttons', {
+//         layout: 'essays'
+//     });
+// });
+
+// router.get('/essays/on-profile-image', function(req, resp){
+
+//     resp.render('essays/on-profile-image', {
+//         layout: 'essays'
+//     });
+// });
+
+// router.get('/essays/parallax', function(req, resp){
+
+//     resp.render('essays/parallax', {
+//         layout: 'essays'
+//     });
+// });
 
 router.get('/api/flickr/:category', function(req, resp){
 
